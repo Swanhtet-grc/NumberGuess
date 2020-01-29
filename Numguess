@@ -1,0 +1,30 @@
+incorrect = True
+numOfGuess=1
+
+#use while loop to ask user again and again
+while incorrect==True:
+
+  import random
+  randNum = random.randint(1, 100)
+
+  guess=int(input("Guess the number between 1 and 100\n"))
+  print("The correct answer is",randNum)
+
+
+  if guess == randNum:
+    print("Correct! It took", numOfGuess ,"time(s) to get the right one.")
+    incorrect = False
+
+  elif guess != randNum:
+    print("Sorry. You are wrong.")
+    numOfGuess = numOfGuess+1
+    if guess > randNum:
+      print("You are too high \n \n")
+    elif guess < randNum:
+      print("You are too low \n \n")
+    incorrect = True
+    if numOfGuess > 10:
+      print("You don't have any chance! Sorry")
+      break
+
+  
